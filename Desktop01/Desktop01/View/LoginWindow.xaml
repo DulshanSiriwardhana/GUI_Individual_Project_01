@@ -1,0 +1,40 @@
+﻿<Window x:Class="Desktop01.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop01.View" xmlns:local1="clr-namespace:Desktop01.ViewModel"
+        mc:Ignorable="d"
+        Title="Student Manager Login" Height="460" Width="300"
+        
+        WindowState="Minimized"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="Transparent">
+    <Window.DataContext>
+        <local1:LoginWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="DarkSlateBlue"  Offset="0.5"/>
+                <GradientStop Color="DodgerBlue"  Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="3,3,3,3" HorizontalAlignment="Center" Height="250" Margin="0,70,0,0" VerticalAlignment="Top" Width="250">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Aqua"  Offset="0.0"/>
+                    <GradientStop Color="AliceBlue" Offset="0.5"/>
+                    <GradientStop Color="Aquamarine"  Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <TextBox FontWeight="Bold" HorizontalAlignment="Center" Margin="0,125,0,0" TextWrapping="Wrap" Text="{Binding UserName}" VerticalAlignment="Top" Width="200" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White"/>
+        <TextBox FontWeight="Bold" HorizontalAlignment="Center" Margin="0,250,0,0" TextWrapping="Wrap" Text="{Binding Password}" VerticalAlignment="Top" Width="200" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="Login" Content="Login" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Top" Width="100" Height="30" Background="#FF0DFF9F" BorderBrush="#FF00060E" FontWeight="UltraBold" FontFamily="Times New Roman" Command="{Binding LoginCommand}"/>
+        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Margin="0,95,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Height="30" Width="200" FontFamily="Times New Roman" FontSize="15"/>
+        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Margin="0,220,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="30" Width="200" FontFamily="Times New Roman" FontSize="15"/>
+
+    </Grid>
+</Window>
